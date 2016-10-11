@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/Users/touyou/.vim/bundle/neobundle.vim'
+let g:netrw_dirhist_2='/Users/touyou/.oh-my-zsh'
+let g:netrw_dirhist_3='/Users/touyou/.oh-my-zsh/templates'
+let g:netrw_dirhist_4='/Users/touyou/Vagrant/centos7/taskapp/app'
