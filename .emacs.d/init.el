@@ -261,7 +261,13 @@
 ;; .h でも C++
 (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
 
-
+;;; Scheme処理系の設定。
+(setq scheme-program-name "/usr/local/bin/guile")
+ 
+;;; Scheme処理系の起動時に、自動的にウィンドウを分割する。
+(defadvice run-scheme (before split-window activate)
+  (if (= (count-windows) 1) (split-window))
+  (other-window 1))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; 
