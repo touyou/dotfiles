@@ -1,3 +1,3 @@
 # dotfiles
 My dotfiles.  
-including Vim, Emacs, tmux, zsh and git
+including Vim, Emacs, tmux, zsh, ghc, brew and git

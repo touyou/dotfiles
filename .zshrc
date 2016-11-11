@@ -37,6 +37,10 @@ export PAGER=/usr/local/bin/vimpager
 export GOPATH=$HOME/go
 export TOOLCHAINS=swift
 export ANDROID_HOME=$HOME/Library/Android/sdk
+# brew
+if [ -f $(brew --prefix)/etc/brew-wrap ];then
+    source $(brew --prefix)/etc/brew-wrap
+fi
 function title {
     echo -ne "\033]0;"$*"\007"
 }
