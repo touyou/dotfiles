@@ -61,6 +61,7 @@ augroup END
 let s:noplugin = 0
 let s:bundle_root = expand('$MY_VIMRUNTIME/bundle')
 let s:neobundle_root = s:bundle_root . '/neobundle.vim'
+let g:python3_host_prog = expand('~/.pyenv/shims/python3')
 if !isdirectory(s:neobundle_root) || v:version < 702
     " NeoBundleが存在しない、もしくはVimのバージョンが古い場合はプラグインを一切
     " 読み込まない
@@ -85,6 +86,9 @@ else
         \   "mac"       : "make -f make_mac.mak",
         \   "unix"      : "make -f make_unix.mak",
         \ }}
+
+    " Denite
+    NeoBundle "Shougo/denite.vim"
 
     " 以下プラグインの羅列
     " Git関係

@@ -1,0 +1,100 @@
+:q
+calc [2, 3] [1, 1]
+calc [2 3] [1 1]
+:l c.hs
+4 `div` 3
+4 `div` 1
+4 `div` 2
+3 `div` 1
+:q
+:l c.hs
+:q
+x `div` y
+x / y
+let y = 3 :: Int
+let x = 2 :: Int
+2 / 3 + 1
+2 / 3
+:q
+read mysteryDude == mikeD
+read mysteryDude
+read mysteryDude :: Person
+:l chapter7.hs 
+mikeD
+:l chapter7.hs 
+mikeD `elem` beastieBoys
+let beastieBoys = [mca, adRock, mikeD]
+mikeD == mikeD
+mikeD == adRock
+mca == adRock
+:l chapter7.hs 
+data Person = Person { firstName :: String
+:q
+:q
+Just "Haha"
+main
+:l Main.hs
+:l Main.hs
+:l dataSample.hs
+nudge (baseRect 40 100) 60 23
+:l dataSample.hs
+nudge (baseRect 40 100) 60 23
+nudge (Circle (Point 34 34) 10) 5 10
+:l dataSample.hs
+:l dataSample.hs
+map (Circle 10 20) [4,5,6,6]
+Circle 10 20 5
+:l dataSample.hs
+area $ Circle 10 20 10
+:l dataSample.hs
+sphereVolume 2.0
+import Geometry
+:l Geometry.hs
+import Geometry
+Map.lookup "betty" intBook
+let intBook = Map.map string2digits phoneBook
+string2digits "948-9282"
+:l moduleSample.hs
+Map.size newBook
+Map.size phoneBook
+Map.lookup "grace" newBook
+let newBook = Map.insert "grace" "341-9021" phoneBook
+Map.lookup "betty" phoneBook
+:l moduleSample.hs
+Map.fromList [(3, "shoes"),(4,"trees"),(9,"bees")]
+:l moduleSample.hs
+:l moduleSample.hs
+:l moduleSample.hs
+firstTo40
+:l moduleSample.hs
+:l moduleSample.hs
+digitSum 145
+:l moduleSample.hs
+:l moduleSample.hs
+List.foldl' (+) 0 (replicate 100000000 1)
+import qualified Data.List as List
+foldl (+) 0 (replicate 100000000 1)
+foldl (+) 0 (replicate 1000000 1)
+foldl (+) 0 (replicate 100 1)
+decode 3 "kh|#pdun"
+:l moduleSample.hs
+encode 3 "hey mark"
+:l moduleSample.hs
+:l moduleSample.hs
+:l moduleSample.hs
+:l moduleSample.hs
+:l moduleSample.hs
+:l moduleSample.hs
+map Char.ord "abcdefgh"
+import qualified Data.Char as Char
+:q
+map Char.ord "abcdefgh"
+Char.chr 97
+Char.ord 'a'
+import qualified Data.Char as Char
+"art" `List.isInfixOf` "party"
+"art" `isIn` "party"
+:load moduleSample.hs
+wordNums "hello, my name is John . Nice to meet you . How are you ?"
+wordNums "hello, my name is John. Nice to meet you. How are you ?"
+wordNums "hello, my name is John. Nice to meet you. How are you?"

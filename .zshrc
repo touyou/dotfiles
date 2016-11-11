@@ -12,6 +12,8 @@ fi
 
 # Customize to your needs...
 
+setopt nonomatch
+
 path=(
     $HOME/.pyenv/bin(N-/)
     $HOME/.swiftenv/shims(N-/)
@@ -43,3 +45,6 @@ function show_open_issue_on_web {
     ghi show -w $(ghi list --filter 'all' | peco)
 }
 alias si=show_open_issue_on_web
+alias sudo='sudo '
+alias pip-update='pip freeze --local | grep -v '\''^\-e'\'' | cut -d = -f 1 | xargs pip install -U'
+alias pip3-update='pip3 freeze --local | grep -v '\''^\-e'\'' | cut -d = -f 1 | xargs pip3 install -U'
