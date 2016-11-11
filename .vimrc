@@ -55,208 +55,38 @@ augroup MyAutoCmd
   autocmd!
 augroup END
 
-"------------------------------------------------
-" NeoBundle関係
-"------------------------------------------------
-let s:noplugin = 0
-let s:bundle_root = expand('$MY_VIMRUNTIME/bundle')
-let s:neobundle_root = s:bundle_root . '/neobundle.vim'
+"-------------------
+"dein
+"-------------------
 let g:python3_host_prog = expand('~/.pyenv/shims/python3')
-if !isdirectory(s:neobundle_root) || v:version < 702
-    " NeoBundleが存在しない、もしくはVimのバージョンが古い場合はプラグインを一切
-    " 読み込まない
-    let s:noplugin = 1
-else
-    " NeoBundleを'runtimepath'に追加し初期化を行う
-    if has('vim_starting')
-        execute "set runtimepath+=" . s:neobundle_root
+
+let s:dein_dir = expand('$MY_VIMRUNTIME/dein')
+let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
+if &runtimepath !~# '/dein.vim'
+    if !isdirectory(s:dein_repo_dir)
+        execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
     endif
-    call neobundle#begin(s:bundle_root)
-
-    " NeoBundle自身をNeoBundleで管理させる
-    NeoBundleFetch 'Shougo/neobundle.vim'
-
-    " 非同期通信を可能にする
-    " 'build'が指定されているのでインストール時に自動的に
-    " 指定されたコマンドが実行され vimproc がコンパイルされる
-    NeoBundle "Shougo/vimproc", {
-        \ "build": {
-        \   "windows"   : "make -f make_mingw32.mak",
-        \   "cygwin"    : "make -f make_cygwin.mak",
-        \   "mac"       : "make -f make_mac.mak",
-        \   "unix"      : "make -f make_unix.mak",
-        \ }}
-
-    " Denite
-    NeoBundle "Shougo/denite.nvim"
-
-    " 以下プラグインの羅列
-    " Git関係
-    NeoBundleLazy "mattn/gist-vim", {
-        \ "depends": ["mattn/webapi-vim"],
-        \ "autoload": {
-        \   "commands": ["Gist"],
-        \ }}
-
-    " Undoを便利にする
-    NeoBundleLazy "sjl/gundo.vim", {
-          \ "autoload": {
-          \   "commands": ['GundoToggle'],
-          \}}
-    nnoremap <Leader>g :GundoToggle<CR>
-
-    " devicon
-    NeoBundle 'ryanoasis/vim-devicons'
-    NeoBundle 'scrooloose/nerdtree'
-    NeoBundle 'tiagofumo/vim-nerdtree-syntax-highlight'
-    let g:NERDTreeDirArrows = 1
-    let NERDTreeWinSize=22
-    " let NERDTreeShowHidden = 1
-
-    "vim-nerdtree-syntax-highlight
-    let s:rspec_red = 'FE405F'
-    let s:git_orange = 'F54D27'
-    let g:NERDTreeExactMatchHighlightColor = {} " this line is needed to avoid error
-    let g:NERDTreeExactMatchHighlightColor['.gitignore'] = s:git_orange " sets the color for .gitignore files
-    let g:NERDTreePatternMatchHighlightColor = {} " this line is needed to avoid error
-    let g:NERDTreePatternMatchHighlightColor['.*_spec\.rb$'] = s:rspec_red " sets the color for files ending with _spec.rb
-
-    " vim-devicons
-    let g:webdevicons_conceal_nerdtree_brackets = 1
-    let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
-    
-    " dir-icons
-    let g:WebDevIconsUnicodeDecorateFolderNodes = 1
-    let g:DevIconsEnableFoldersOpenClose = 1
-    let g:WebDevIconsUnicodeDecorateFolderNodesDefaultSymbol = ''
-    let g:DevIconsDefaultFolderOpenSymbol = ''
-    " file-icons
-    let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols = {}
-    let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['html'] = ''
-    let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['css'] = ''
-    let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['md'] = ''
-    let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['txt'] = ''
-
-    set guifont=RictyDiscordForPowerline\ Nerd\ Font:h13
-
-    " Python補完・リファクタリング・リファレンス環境
-    NeoBundleLazy "davidhalter/jedi-vim", {
-          \ "autoload": {
-          \   "filetypes": ["python", "python3", "djangohtml"],
-          \ },
-          \ "build": {
-          \   "mac": "pip install jedi",
-          \   "unix": "pip install jedi",
-          \ }}
-    let s:hooks = neobundle#get_hooks("jedi-vim")
-    function! s:hooks.on_source(bundle)
-        " jediにvimの設定を任せると'completeopt+=preview'するので
-        " 自動設定機能をOFFにし手動で設定を行う
-        let g:jedi#auto_vim_configuration = 0
-         " 補完の最初の項目が選択された状態だと使いにくいためオフにする
-        let g:jedi#popup_select_first = 0
-        " quickrunと被るため大文字に変更
-        let g:jedi#rename_command = '<Leader>R'
-        " gundoと被るため大文字に変更 (2013-06-24 10:00 追記）
-        let g:jedi#goto_assignments_command = '<Leader>G'
-    endfunction
-
-    " Swift関連
-    NeoBundle 'toyamarinyon/vim-swift'
-    " 構文間違え指摘
-    NeoBundle "scrooloose/syntastic", {
-      \ "build": {
-      \   "mac": ["pip install flake8", "npm -g install coffeelint"],
-      \   "unix": ["pip install flake8", "npm -g install coffeelint"],
-      \ }}
-
-    " Scheme
-    NeoBundle 'wlangstroth/vim-racket'
-
-    " tagbar
-    NeoBundle 'majutsushi/tagbar'
-
-    " vim compiler file for go
-    NeoBundle "rjohnsondev/vim-compiler-go"
-
-    " dogelang mode
-    NeoBundle 'rubik/vim-dg'
-
-    " Djangoを正しくVimで読み込めるようにする
-    NeoBundleLazy "lambdalisue/vim-django-support", {
-          \ "autoload": {
-          \   "filetypes": ["python", "python3", "djangohtml"]
-          \ }}
-
-    " vim-fugitiveは'autocmd'多用してるっぽくて遅延ロード不可
-    NeoBundle "tpope/vim-fugitive"
-    NeoBundleLazy "gregsexton/gitv", {
-        \ "depends": ["tpope/vim-fugitive"],
-        \ "autoload": {
-        \   "commands": ["Gitv"],
-        \ }}
-
-    " vim-go
-    NeoBundle 'fatih/vim-go'
-
-    " vim-godef
-    NeoBundle 'dgryski/vim-godef'
-
-    " vim-go-extra
-    NeoBundle 'vim-jp/vim-go-extra'
-
-    " インデントの可視化
-    NeoBundle "nathanaelkane/vim-indent-guides"
-    " let g:indent_guides_enable_on_vim_startup = 1 2013-06-24 10:00 削除
-    let s:hooks = neobundle#get_hooks("vim-indent-guides")
-    function! s:hooks.on_source(bundle)
-      let g:indent_guides_guide_size = 1
-      " IndentGuidesEnable " 2013-06-24 10:00 追記
-    endfunction
-
-    " プログラムの即時実行
-    NeoBundleLazy "thinca/vim-quickrun", {
-          \ "autoload": {
-          \   "mappings": [['nxo', '<Plug>(quickrun)']]
-          \ }}
-    nmap <Leader>r <Plug>(quickrun)
-    let s:hooks = neobundle#get_hooks("vim-quickrun")
-    function! s:hooks.on_source(bundle)
-        let g:quickrun_config = {
-              \ "*": {"runner": "remote/vimproc"},
-              \ }
-    endfunction
-
-    " Vimで正しくvirtualenvを処理できるようにする
-    NeoBundleLazy "jmcantrell/vim-virtualenv", {
-          \ "autoload": {
-          \   "filetypes": ["python", "python3", "djangohtml"]
-          \ }}
-
-    " Markdown Preview
-    NeoBundle 'plasticboy/vim-markdown'
-    NeoBundle 'kannokanno/previm'
-    NeoBundle 'tyru/open-browser.vim'
-    au BufRead,BufNewFile *.md set filetype=markdown
-    let g:previm_open_cmd = 'open -a Chrome'
-
-    " lightline
-    NeoBundle 'itchyny/lightline.vim'
-    set showmode
-
-    " indent view
-    NeoBundle 'Yggdroot/indentLine'
-
-    " railscasts
-    NeoBundle 'KeitaNakamura/railscasts.vim'
-    NeoBundle 'KeitaNakamura/lightline-railscasts.vim'
-
-    " インストールされていないプラグインのチェックおよびダウンロード
-    NeoBundleCheck
-
-    call neobundle#end()
+    execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
 endif
 
+if dein#load_state(s:dein_dir)
+    call dein#begin(s:dein_dir)
+    let g:rc_dir = expand('$MY_VIMRUNTIME/rc')
+    let s:toml = g:rc_dir . '/dein.toml'
+    let s:lazy_toml = g:rc_dir . '/dein_lazy.toml'
+
+    call dein#load_toml(s:toml, {'lazy': 0})
+    call dein#load_toml(s:lazy_toml, {'lazy': 1})
+
+    call dein#end()
+    call dein#save_state()
+endif
+
+if dein#check_install()
+    call dein#install()
+endif
+
+let s:noplugin = 0
 " ファイルタイププラグインおよびインデントを有効化
 " これはNeoBundleによる処理が終了したあとに呼ばなければならない
 filetype plugin indent on
@@ -333,6 +163,7 @@ set ruler               " ルーラーを表示
 set cmdheight=2         " コマンドラインの高さ
 set laststatus=2
 set showcmd             " コマンドをステータスラインに表示
+set showmode            " モードを表示
 syntax on               " ハイライトシンタックスをonに
 
 " 前時代的スクリーンベルを無効化
@@ -346,6 +177,35 @@ set listchars=tab:»-,trail:-,extends:»,precedes:«,nbsp:%,eol:↲
 colorscheme railscasts
 let g:lightline = {}
 let g:lightline.colorscheme = 'railscasts'
+
+" devicon
+let g:NERDTreeDirArrows = 1
+let NERDTreeWinSize=22
+" let NERDTreeShowHidden = 1
+"vim-nerdtree-syntax-highlight
+let s:rspec_red = 'FE405F'
+let s:git_orange = 'F54D27'
+let g:NERDTreeExactMatchHighlightColor = {} " this line is needed to avoid error
+let g:NERDTreeExactMatchHighlightColor['.gitignore'] = s:git_orange " sets the color for .gitignore files
+let g:NERDTreePatternMatchHighlightColor = {} " this line is needed to avoid error
+let g:NERDTreePatternMatchHighlightColor['.*_spec\.rb$'] = s:rspec_red " sets the color for files ending with _spec.rb
+
+" vim-devicons
+let g:webdevicons_conceal_nerdtree_brackets = 1
+let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
+
+" dir-icons
+let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+let g:DevIconsEnableFoldersOpenClose = 1
+let g:WebDevIconsUnicodeDecorateFolderNodesDefaultSymbol = ''
+let g:DevIconsDefaultFolderOpenSymbol = ''
+" file-icons
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols = {}
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['html'] = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['css'] = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['md'] = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['txt'] = ''
+set guifont=RictyDiscordForPowerline\ Nerd\ Font:h13
 
 "------------------------------------------------
 " マクロおよびキー設定
