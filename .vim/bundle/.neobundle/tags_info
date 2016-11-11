@@ -1,4 +1,4 @@
-denite.vim
+denite.nvim
 gist-vim
 gitv
 gundo.vim
@@ -7,12 +7,14 @@ jedi-vim
 lightline-railscasts.vim
 lightline.vim
 neobundle.vim
+nerdtree
 open-browser.vim
 previm
 railscasts.vim
 syntastic
 tagbar
 vim-compiler-go
+vim-devicons
 vim-dg
 vim-django-support
 vim-fugitive
@@ -21,6 +23,7 @@ vim-go-extra
 vim-godef
 vim-indent-guides
 vim-markdown
+vim-nerdtree-syntax-highlight
 vim-quickrun
 vim-racket
 vim-swift
