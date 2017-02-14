@@ -5,11 +5,10 @@ tap argon/mas
 brew mas
 
 tap caskroom/cask
+cask coqide
 cask emacs
-cask macdown
 cask mactex
 cask racket
-cask wwdc
 cask xquartz
 
 tap caskroom/fonts
@@ -25,6 +24,7 @@ brew pyenv-pip-rehash
 
 tap homebrew/core
 brew aspcud
+brew atk
 brew autoconf
 brew automake
 brew bdw-gc
@@ -34,15 +34,20 @@ brew boost-python
 brew cabal-install
 brew cairo
 brew camlp4
+brew camlp5
 brew carthage
 brew clasp
 brew cloog
 brew cmake
+brew coq
 brew coreutils
 brew curl
 brew czmq
 brew emacs --with-cocoa
+brew epstool
 brew erlang
+brew fftw
+brew fltk
 brew fontconfig
 brew fontforge
 brew freetype
@@ -57,17 +62,24 @@ brew ghi
 brew ghostscript
 brew git
 brew git-flow
+brew gl2ps
 brew glib
 brew gmp
 brew gnuplot --with-x11
 brew gnutls
 brew go
 brew gobject-introspection
+brew graphicsmagick
 brew graphviz
 brew gringo
+brew gsettings-desktop-schemas
+brew gtk+
+brew gtk+3
+brew gtk-mac-integration
 brew guile
 brew harfbuzz
 brew haskell-stack
+brew hicolor-icon-theme
 brew hiredis
 brew http-parser
 brew hub
@@ -80,6 +92,7 @@ brew jpeg
 brew jruby
 brew lame
 brew libcroco
+brew libepoxy
 brew libevent
 brew libffi
 brew libgcrypt
@@ -103,7 +116,8 @@ brew mysql
 brew nettle
 brew ninja
 brew nmap
-brew node
+brew node --with-full-icu
+brew numpy
 brew ocaml
 brew ocamlbuild
 brew opam
@@ -116,31 +130,45 @@ brew perl-build
 brew pixman
 brew pkg-config
 brew plenv
+brew plotutils
 brew portmidi
+brew pstoedit
+brew py2cairo
 brew pyenv
 brew pyenv-virtualenv
+brew pygobject
+brew pygtk
+brew pyqt5
 brew python
 brew python3
+brew qscintilla2
+brew qt5
 brew rbenv
 brew readline
 brew reattach-to-user-namespace
 brew ruby
 brew ruby-build
 brew sdl
+brew sdl2
 brew sdl_image
 brew sdl_mixer
 brew sdl_ttf
 brew shared-mime-info
+brew sip
 brew sl
 brew smpeg
 brew sox
 brew sqlite
 brew swiftlint
+brew swig
+brew szip
+brew tbb
 brew tmux
 brew tree
 brew unixodbc
 brew utf8proc
 brew vim --with-python3
+brew vimpager
 brew webp
 brew weechat --with-ruby --with-python --with-perl
 brew wget
@@ -150,24 +178,28 @@ brew xz
 brew zeromq
 brew zsh --without-etcdir
 
+tap homebrew/gui
+
 tap homebrew/head-only
 
 tap homebrew/headonly
 
 tap homebrew/python
-brew numpy
-brew vpython
 
 tap homebrew/science
+brew arpack
+brew glpk
+brew hdf5
+brew metis
+brew octave
+brew qhull
+brew qrupdate
 brew r
+brew suite-sparse
+brew transfig
+brew veclibfort
 
 tap homebrew/versions
-brew cloog018
-brew gcc49
-brew gmp4
-brew isl011
-brew libmpc08
-brew mpfr2
 
 tap kylef/formulae
 brew swiftenv
@@ -181,6 +213,16 @@ brew brew-file
 tap sanemat/font
 brew ricty --vim-powerline
 
+# Other Homebrew packages
+brew cloog018
+brew gcc49
+brew gmp4
+brew gtkwave
+brew isl011
+brew libmpc08
+brew mpfr2
+brew vpython
+
 # App Store applications
 appstore 824171161 Affinity Designer (1.5.1)
 appstore 824183456 Affinity Photo (1.4.3)
@@ -191,7 +233,7 @@ appstore 682658836 GarageBand (10.1.3)
 appstore 939343785 Icon Set Creator (1.1.4)
 appstore 409183694 Keynote (7.0.5)
 appstore 896624060 Kobito (2.3.8)
-appstore 539883307 LINE (4.10.0)
+appstore 539883307 LINE (4.10.2)
 appstore 411213048 LadioCast (000012000)
 appstore 409203825 Numbers (4.0.5)
 appstore 409201541 Pages (6.0.5)

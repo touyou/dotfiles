@@ -17,6 +17,7 @@ setopt nonomatch
 path=(
     $HOME/.pyenv/bin(N-/)
     $HOME/.swiftenv/shims(N-/)
+    $HOME/.cabal/bin(N-/)
     /usr/local/Celllar(N-/)
     /usr/local/bin(N-/)
     /usr/local/sbin(N-/)
@@ -52,3 +53,4 @@ alias si=show_open_issue_on_web
 alias sudo='sudo '
 alias pip-update='pip freeze --local | grep -v '\''^\-e'\'' | cut -d = -f 1 | xargs pip install -U'
 alias pip3-update='pip3 freeze --local | grep -v '\''^\-e'\'' | cut -d = -f 1 | xargs pip3 install -U'
+alias octave='octave --no-gui'

@@ -1,4 +1,10 @@
 :q
+:show imports
+:s imports
+:i Functor
+:k Either
+:t 3
+:q
 calc [2, 3] [1, 1]
 calc [2 3] [1 1]
 :l c.hs
@@ -92,9 +98,3 @@ map Char.ord "abcdefgh"
 Char.chr 97
 Char.ord 'a'
 import qualified Data.Char as Char
-"art" `List.isInfixOf` "party"
-"art" `isIn` "party"
-:load moduleSample.hs
-wordNums "hello, my name is John . Nice to meet you . How are you ?"
-wordNums "hello, my name is John. Nice to meet you. How are you ?"
-wordNums "hello, my name is John. Nice to meet you. How are you?"
