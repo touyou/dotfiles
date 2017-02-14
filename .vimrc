@@ -243,7 +243,7 @@ for n in range(1, 9)
 endfor
 " t1で一番左のタブ、tnで左からn番目のタブにジャンプ
 " tc 新しいタブ
-map <silent> [Tag]c :tablast <bar> tabnew<CR>
+map <silent> [Tag]o :tablast <bar> tabnew<CR>
 " tx タブを閉じる
 map <silent> [Tag]x :tabclose<CR>
 " tn 次のタブ
