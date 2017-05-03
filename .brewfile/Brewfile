@@ -7,6 +7,7 @@ brew mas
 tap caskroom/cask
 cask coqide
 cask emacs
+cask filezilla
 cask mactex
 cask racket
 cask xquartz
@@ -20,7 +21,6 @@ tap codefirst/sparkling
 brew brew-sparkling
 
 tap homebrew/boneyard
-brew pyenv-pip-rehash
 
 tap homebrew/core
 brew aspcud
@@ -60,6 +60,7 @@ brew gettext
 brew ghc
 brew ghi
 brew ghostscript
+brew gifsicle
 brew git
 brew git-flow
 brew gl2ps
@@ -138,14 +139,14 @@ brew pyenv
 brew pyenv-virtualenv
 brew pygobject
 brew pygtk
-brew pyqt5
 brew python
 brew python3
 brew qscintilla2
-brew qt5
 brew rbenv
 brew readline
 brew reattach-to-user-namespace
+brew redis
+brew rlwrap
 brew ruby
 brew ruby-build
 brew sdl
@@ -159,10 +160,12 @@ brew sl
 brew smpeg
 brew sox
 brew sqlite
+brew swi-prolog
 brew swiftlint
 brew swig
 brew szip
 brew tbb
+brew tig
 brew tmux
 brew tree
 brew unixodbc
@@ -221,6 +224,9 @@ brew gtkwave
 brew isl011
 brew libmpc08
 brew mpfr2
+brew pyenv-pip-rehash
+brew pyqt5
+brew qt5
 brew vpython
 
 # App Store applications

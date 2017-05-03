@@ -110,3 +110,6 @@ repo = 'tyru/open-browser.vim'
 
 [[plugins]]
 repo = 'tpope/vim-fugitive'
+
+[[plugins]]
+repo = 'wakatime/vim-wakatime'
