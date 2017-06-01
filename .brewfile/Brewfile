@@ -9,7 +9,6 @@ cask coqide
 cask emacs
 cask filezilla
 cask mactex
-cask racket
 cask xquartz
 
 tap caskroom/fonts
@@ -60,6 +59,7 @@ brew gettext
 brew ghc
 brew ghi
 brew ghostscript
+brew gibo
 brew gifsicle
 brew git
 brew git-flow
@@ -88,9 +88,11 @@ brew icarus-verilog
 brew icu4c
 brew imagemagick
 brew intltool
+brew iperf
 brew isl
 brew jpeg
 brew jruby
+brew kotlin
 brew lame
 brew libcroco
 brew libepoxy
@@ -118,6 +120,7 @@ brew nettle
 brew ninja
 brew nmap
 brew node --with-full-icu
+brew nodebrew
 brew numpy
 brew ocaml
 brew ocamlbuild
@@ -161,12 +164,12 @@ brew smpeg
 brew sox
 brew sqlite
 brew swi-prolog
+brew swiftgen
 brew swiftlint
 brew swig
 brew szip
 brew tbb
 brew tig
-brew tmux
 brew tree
 brew unixodbc
 brew utf8proc
@@ -206,6 +209,9 @@ tap homebrew/versions
 
 tap kylef/formulae
 brew swiftenv
+
+tap mono0926/license-plist
+brew license-plist
 
 tap peco/peco
 brew migemogrep

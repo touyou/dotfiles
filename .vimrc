@@ -327,6 +327,7 @@ set whichwrap=b,s,h,l,[,],<,>
 " □や○の文字があってもカーソル位置がずれないようにする
 set ambiwidth=double
 " コマンドライン補完するときに強化されたものを使う
+set wildmode=list,full
 set wildmenu
 
 "------------------------------------------------

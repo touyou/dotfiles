@@ -1,5 +1,5 @@
 [user]
-	name = Fujii Yosuke
+	name = touyou
 	email = fujiyou1121@gmail.com
 [push]
 	default = matching
@@ -28,3 +28,5 @@
 	user = touyou
 [ghi]
 	token = !security find-internet-password -a touyou -s github.com -l 'ghi token' -w
+[commit]
+	template = /Users/touyou/.stCommitMsg

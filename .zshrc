@@ -19,6 +19,7 @@ path=(
     $HOME/.swiftenv/shims(N-/)
     $HOME/.opam/packages(N-/)
     $HOME/.cabal/bin(N-/)
+    $HOME/.nodebrew/current/bin(N-/)
     /usr/local/Celllar(N-/)
     /usr/local/bin(N-/)
     /usr/local/sbin(N-/)
@@ -56,3 +57,15 @@ alias pip-update='pip freeze --local | grep -v '\''^\-e'\'' | cut -d = -f 1 | xa
 alias pip3-update='pip3 freeze --local | grep -v '\''^\-e'\'' | cut -d = -f 1 | xargs pip3 install -U'
 alias octave='octave --no-gui'
 alias ocaml='rlwrap ocaml'
+
+function brup() {
+    brew upgrade;
+    brew cleanup;
+    brew cask_upgrade;
+    brew cask cleanup
+}
+
+function gifo() { git-foresta --style=10 "$@" | less -RSX }
+function gifa() { git-foresta --all --style=10 "$@" | less -RSX }
+compdef _git gifo=git-log
+compdef _git gifa=git-log
