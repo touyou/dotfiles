@@ -61,7 +61,7 @@ alias ocaml='rlwrap ocaml'
 function brup() {
     brew upgrade;
     brew cleanup;
-    brew cask_upgrade;
+    brew cask_upgrade -C;
     brew cask cleanup
 }
 

@@ -9,6 +9,8 @@ cask coqide
 cask emacs
 cask filezilla
 cask mactex
+cask vagrant
+cask virtualbox
 cask xquartz
 
 tap caskroom/fonts
@@ -28,8 +30,6 @@ brew autoconf
 brew automake
 brew bdw-gc
 brew binutils
-brew boost
-brew boost-python
 brew cabal-install
 brew cairo
 brew camlp4
