@@ -39,6 +39,12 @@ alias pip-update='pip freeze --local | grep -v '\''^\-e'\'' | cut -d = -f 1 | xa
 alias pip3-update='pip3 freeze --local | grep -v '\''^\-e'\'' | cut -d = -f 1 | xargs pip3 install -U'
 alias ocaml='rlwrap ocaml'
 
+function apt-update() {
+    sudo apt-get update;
+    sudo apt-get upgrade;
+    sudo apt-get clean
+}
+
 function gifo() { git-foresta --style=10 "$@" | less -RSX }
 function gifa() { git-foresta --all --style=10 "$@" | less -RSX }
 compdef _git gifo=git-log
