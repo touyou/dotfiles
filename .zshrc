@@ -42,6 +42,7 @@ alias ocaml='rlwrap ocaml'
 function apt-update() {
     sudo apt-get update;
     sudo apt-get upgrade;
+    sudo apt autoremove;
     sudo apt-get clean
 }
 
