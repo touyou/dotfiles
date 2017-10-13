@@ -130,6 +130,8 @@ augroup fileTypeIndent
     autocmd BufNewFile,BufRead *.rb setlocal ts=2 sw=2 sts=2
     autocmd BufNewFile,BufRead *.ml setlocal ts=2 sw=2 sts=2
     autocmd BufNewFile,BufRead *.mli setlocal ts=2 sw=2 sts=2
+    autocmd BufNewFile,BufRead *.mly setlocal ts=2 sw=2 sts=2
+    autocmd BufNewFile,BufRead *.mll setlocal ts=2 sw=2 sts=2
     autocmd BufNewFile,BufRead *.html setlocal ts=2 sw=2 sts=2
     autocmd BufNewFile,BufRead *.js setlocal ts=2 sw=2 sts=2
     autocmd BufNewFile,BufRead *.css setlocal ts=2 sw=2 sts=2
@@ -261,6 +263,50 @@ map <silent> [Tag]x :tabclose<CR>
 map <silent> [Tag]n :tabnext<CR>
 " tp 前のタブ
 map <silent> [Tag]p :tabprevious<CR>
+
+" TeX
+let g:tex_conceal = ''
+let g:Tex_AutoFolding = 0
+let g:Tex_Folding = 0
+" Markdown
+let g:vim_markdown_conceal = 0
+let g:vim_markdown_math = 1
+let g:vim_markdown_new_list_item_indent = 2
+
+" syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
+
+hi SyntasticErrorSign ctermfg=160
+hi SyntasticWarningSign ctermfg=220
+" merlin
+let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
+call dein#add(g:opamshare . "/merlin/vim", {'lazy': 1, 'on_ft': 'ocaml', 'on_event': 'InsertEnter'})
+let g:syntastic_ocaml_checkers = ['merlin']
+
+" NeoComplete
+" Disable AutoComplPop.
+let g:acp_enableAtStartup = 0
+" Use neocomplete.
+let g:neocomplete#enable_at_startup = 1
+" Use smartcase.
+let g:neocomplete#enable_smart_case = 1
+" Set minimum syntax keyword length.
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+
+autocmd FileType python setlocal omnifunc=jedi#completions
+
+if !exists('g:neocomplete#sources#omni#input_patterns')
+  let g:neocomplete#sources#omni#input_patterns = {}
+endif
+let g:neocomplete#sources#omni#input_patterns.ocaml = '[^. *\t]\.\w*\|\h\w*|#'
+let g:neocomplete#sources#omni#input_patterns.python = '\h\w*\|[^. \t]\.\w*'
 
 "------------------------------------------------
 " マクロおよびキー設定
@@ -407,35 +453,3 @@ else
   "autochdirが存在しないが、カレントディレクトリを移動したい場合
   au BufEnter * execute ":silent! lcd " . escape(expand("%:p:h"), ' ')
 endif
-" ## added by OPAM user-setup for vim / base ## 93ee63e278bdfc07d1139a748ed3fff2 ## you can edit, but keep this line
-let s:opam_share_dir = system("opam config var share")
-let s:opam_share_dir = substitute(s:opam_share_dir, '[\r\n]*$', '', '')
-
-let s:opam_configuration = {}
-
-function! OpamConfOcpIndent()
-  execute "set rtp^=" . s:opam_share_dir . "/ocp-indent/vim"
-endfunction
-let s:opam_configuration['ocp-indent'] = function('OpamConfOcpIndent')
-
-function! OpamConfOcpIndex()
-  execute "set rtp+=" . s:opam_share_dir . "/ocp-index/vim"
-endfunction
-let s:opam_configuration['ocp-index'] = function('OpamConfOcpIndex')
-
-function! OpamConfMerlin()
-  let l:dir = s:opam_share_dir . "/merlin/vim"
-  execute "set rtp+=" . l:dir
-endfunction
-let s:opam_configuration['merlin'] = function('OpamConfMerlin')
-
-let s:opam_packages = ["ocp-indent", "ocp-index", "merlin"]
-let s:opam_check_cmdline = ["opam list --installed --short --safe --color=never"] + s:opam_packages
-let s:opam_available_tools = split(system(join(s:opam_check_cmdline)))
-for tool in s:opam_packages
-  " Respect package order (merlin should be after ocp-index)
-  if count(s:opam_available_tools, tool) > 0
-    call s:opam_configuration[tool]()
-  endif
-endfor
-" ## end of OPAM user-setup addition for vim / base ## keep this line

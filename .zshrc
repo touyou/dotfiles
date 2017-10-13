@@ -24,6 +24,7 @@ path=(
     /usr/local/bin(N-/)
     /usr/local/sbin(N-/)
     $HOME/bin(N-/)
+    $HOME/.fastlane/bin(N-/)
     $HOME/Library/Android/sdk/platform-tools(N-/)
     /Library/TeX/texbin(N-/)
     $path
@@ -69,3 +70,8 @@ function gifo() { git-foresta --style=10 "$@" | less -RSX }
 function gifa() { git-foresta --all --style=10 "$@" | less -RSX }
 compdef _git gifo=git-log
 compdef _git gifa=git-log
+
+# OPAM configuration
+. /Users/touyou/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+export OCAMLPARAM="_,bin-annot=1"
+export OPAMKEEPBUILDDIR=1

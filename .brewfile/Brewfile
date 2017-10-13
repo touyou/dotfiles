@@ -7,12 +7,12 @@ brew mas
 tap beeftornado/rmtree
 
 tap caskroom/cask
-cask coqide
-cask filezilla
-cask mactex
-cask vagrant
+cask fastlane
 cask virtualbox
+cask vagrant
+cask mactex
 cask xquartz
+cask filezilla
 
 tap caskroom/fonts
 cask font-source-code-pro
@@ -25,6 +25,7 @@ brew brew-sparkling
 tap homebrew/boneyard
 
 tap homebrew/core
+brew arpack
 brew aspcud
 brew atk
 brew autoconf
@@ -69,6 +70,7 @@ brew git
 brew git-flow
 brew gl2ps
 brew glib
+brew glpk
 brew gmp
 brew gmp@4
 brew gnu-sed
@@ -130,6 +132,7 @@ brew mad
 brew mecab
 brew mecab-ipadic
 brew mercurial
+brew metis
 brew mobiledevice
 brew mpfr
 brew mpfr@2
@@ -142,6 +145,7 @@ brew nodebrew
 brew numpy
 brew ocaml
 brew ocamlbuild
+brew octave
 brew opam
 brew openssl
 brew openssl@1.1
@@ -165,6 +169,8 @@ brew pygtk
 brew pyqt
 brew python
 brew python3
+brew qhull
+brew qrupdate
 brew qscintilla2
 brew qt
 brew qt@5.7
@@ -187,6 +193,7 @@ brew sl
 brew smpeg
 brew sox
 brew sqlite
+brew suite-sparse
 brew swi-prolog
 brew swiftgen
 brew swiftlint
@@ -198,7 +205,8 @@ brew tig
 brew tree
 brew unixodbc
 brew utf8proc
-brew vim --with-python3
+brew veclibfort
+brew vim --with-python3 --with-lua
 brew vimpager
 brew webp
 brew weechat --with-perl --with-ruby --with-python
@@ -208,14 +216,6 @@ brew wxpython
 brew xz
 brew zeromq
 brew zsh --without-etcdir
-brew arpack
-brew glpk
-brew metis
-brew octave
-brew qhull
-brew qrupdate
-brew suite-sparse
-brew veclibfort
 
 tap homebrew/gui
 
@@ -245,6 +245,7 @@ tap sanemat/font
 brew ricty --vim-powerline
 
 # Other Homebrew packages
+brew npm
 brew transfig
 
 # App Store applications

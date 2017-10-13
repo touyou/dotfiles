@@ -36,6 +36,9 @@ repo = 'tiagofumo/vim-nerdtree-syntax-highlight'
 [[plugins]]
 repo = 'scrooloose/syntastic'
 
+[[plugins]]
+repo = 'Shougo/neocomplete.vim'
+
 # インデント
 [[plugins]]
 repo = 'nathanaelkane/vim-indent-guides'
@@ -93,16 +96,20 @@ repo = 'vim-jp/vim-go-extra'
 repo = 'cespare/vim-toml'
 on_ft = 'toml'
 
+# ocaml
+[[plugins]]
+repo = 'def-lkb/ocp-indent-vim'
+
+# tex
+[[plugins]]
+repo = 'vim-latex/vim-latex'
+
 # markdown
 [[plugins]]
 repo = 'plasticboy/vim-markdown'
 # repo = 'tpope/vim-markdown'
 on_if = '''
-    let g:vim_markdown_conceal = 0
-    let g:tex_conceal = ""
-    let g:vim_markdown_math = 1
-    let g:vim_markdown_new_list_item_indent = 2
-'''
+    '''
 
 [[plugins]]
 repo = 'kannokanno/previm'
