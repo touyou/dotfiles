@@ -48,6 +48,8 @@ fi
 function title {
     echo -ne "\033]0;"$*"\007"
 }
+export HOMEBREW_GITHUB_API_TOKEN="cfe7c7310a73e661166d1eb470c486315c8e7b74"
+
 
 function show_open_issue_on_web {
     ghi show -w $(ghi list --filter 'all' | peco)
