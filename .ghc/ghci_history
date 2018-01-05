@@ -1,4 +1,6 @@
 :q
+[1, 2, 3] `mappend` [4, 5, 6]
+:q
 :show imports
 :s imports
 :i Functor
@@ -96,5 +98,3 @@ import qualified Data.Char as Char
 :q
 map Char.ord "abcdefgh"
 Char.chr 97
-Char.ord 'a'
-import qualified Data.Char as Char

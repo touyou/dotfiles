@@ -21,9 +21,12 @@ path=(
     $HOME/.cabal/bin(N-/)
     $HOME/.nodebrew/current/bin(N-/)
     /usr/local/Celllar(N-/)
+    /usr/local/Cellar/ruby/2.4.2_1/bin(N-/)
     /usr/local/bin(N-/)
     /usr/local/sbin(N-/)
+    /usr/local/opt/llvm/bin(N-/)
     $HOME/bin(N-/)
+    $HOME/.local/bin(N-/)
     $HOME/.fastlane/bin(N-/)
     $HOME/Library/Android/sdk/platform-tools(N-/)
     /Library/TeX/texbin(N-/)
@@ -66,6 +69,13 @@ function brup() {
     brew cleanup;
     brew cask_upgrade -C;
     brew cask cleanup
+}
+
+function allupdate() {
+    brup;
+    pip-update;
+    pip3-update;
+    sudo gem update
 }
 
 function gifo() { git-foresta --style=10 "$@" | less -RSX }

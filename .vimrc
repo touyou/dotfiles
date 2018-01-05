@@ -22,11 +22,11 @@ set fileformats=unix,mac,dos
 "$MY_VIMRUNTIMEはユーザーランタイムディレクトリを示す。
 ":echo $MY_VIMRUNTIMEで実際のパスを確認できます。
 if isdirectory($HOME . '/.vim')
-  let $MY_VIMRUNTIME = $HOME.'/.vim'
+    let $MY_VIMRUNTIME = $HOME.'/.vim'
 elseif isdirectory($HOME . '\vimfiles')
-  let $MY_VIMRUNTIME = $HOME.'\vimfiles'
+    let $MY_VIMRUNTIME = $HOME.'\vimfiles'
 elseif isdirectory($VIM . '\vimfiles')
-  let $MY_VIMRUNTIME = $VIM.'\vimfiles'
+    let $MY_VIMRUNTIME = $VIM.'\vimfiles'
 endif
 "ランタイムパスを通す必要のあるプラグインを使用する場合
 "$MY_VIMRUNTIMEを使用すると Windows/Linuxで切り分ける必要が無くなります。
@@ -52,7 +52,7 @@ scriptencoding utf-8
 
 " release autogroup in MyAutoCmd
 augroup MyAutoCmd
-  autocmd!
+    autocmd! *
 augroup END
 
 "-------------------
@@ -91,6 +91,34 @@ let s:noplugin = 0
 " これはNeoBundleによる処理が終了したあとに呼ばなければならない
 filetype plugin indent on
 
+" for security
+set secure
+
+" load vimrc for easy
+if has('nvim')
+    nnoremap <silent> <F1> :<C-u>e ~/.config/nvim/init.vim<CR>
+else
+    nnoremap <silent> <F1> :<C-u>e ~/.vimrc<CR>
+endif
+
+" source vimrc for easy
+if !exists('*s:source_script')
+    " ~/.vimrc をソースすると関数実行中に関数の上書きを行うことになりエラーとなるため
+    " 'function!' による強制上書きではなく if によるガードを行っている
+    function s:source_script(path) abort
+        let path = expand(a:path)
+        if !filereadable(path)
+            return
+        endif
+        execute 'source' fnameescape(path)
+        echomsg printf(
+                    \ '"%s" has sourced (%s)',
+                    \ simplify(fnamemodify(path, ':~:.')),
+                    \ strftime('%c'),
+                    \)
+    endfunction
+endif
+nnoremap <silent> <F10> :<C-u>call <SID>source_script('%')<CR>
 "------------------------------------------------
 " 検索関係
 "------------------------------------------------
@@ -307,6 +335,9 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
+" C++11
+let g:syntastic_cpp_compiler = 'g++'
+let g:syntastic_cpp_compiler_options = ' -std=c++1z'
 
 hi SyntasticErrorSign ctermfg=160
 hi SyntasticWarningSign ctermfg=220
@@ -326,9 +357,10 @@ let g:neocomplete#enable_smart_case = 1
 let g:neocomplete#sources#syntax#min_keyword_length = 3
 
 autocmd FileType python setlocal omnifunc=jedi#completions
+autocmd FileType python setlocal completeopt-=preview
 
 if !exists('g:neocomplete#sources#omni#input_patterns')
-  let g:neocomplete#sources#omni#input_patterns = {}
+    let g:neocomplete#sources#omni#input_patterns = {}
 endif
 let g:neocomplete#sources#omni#input_patterns.ocaml = '[^. *\t]\.\w*\|\h\w*|#'
 let g:neocomplete#sources#omni#input_patterns.python = '\h\w*\|[^. \t]\.\w*'
@@ -409,23 +441,23 @@ set wildmenu
 " iconvが使用可能の場合、カーソル上の文字コードをエンコードに応じた表示にするFencB()を使用
 "----------------------------------------
 if has('iconv')
-  set statusline=%<%f\ %m\ %r%h%w%{'['.(&fenc!=''?&fenc:&enc).(&bomb?':BOM':'').']['.&ff.']'}%=[0x%{FencB()}]\ (%v,%l)/%L%8P\
+    set statusline=%<%f\ %m\ %r%h%w%{'['.(&fenc!=''?&fenc:&enc).(&bomb?':BOM':'').']['.&ff.']'}%=[0x%{FencB()}]\ (%v,%l)/%L%8P\
 else
-  set statusline=%<%f\ %m\ %r%h%w%{'['.(&fenc!=''?&fenc:&enc).(&bomb?':BOM':'').']['.&ff.']'}%=\ (%v,%l)/%L%8P\
+    set statusline=%<%f\ %m\ %r%h%w%{'['.(&fenc!=''?&fenc:&enc).(&bomb?':BOM':'').']['.&ff.']'}%=\ (%v,%l)/%L%8P\
 endif
 
 function! FencB()
-  let c = matchstr(getline('.'), '.', col('.') - 1)
-  let c = iconv(c, &enc, &fenc)
-  return s:Byte2hex(s:Str2byte(c))
+    let c = matchstr(getline('.'), '.', col('.') - 1)
+    let c = iconv(c, &enc, &fenc)
+    return s:Byte2hex(s:Str2byte(c))
 endfunction
 
 function! s:Str2byte(str)
-  return map(range(len(a:str)), 'char2nr(a:str[v:val])')
+    return map(range(len(a:str)), 'char2nr(a:str[v:val])')
 endfunction
 
 function! s:Byte2hex(bytes)
-  return join(map(copy(a:bytes), 'printf("%02X", v:val)'), '')
+    return join(map(copy(a:bytes), 'printf("%02X", v:val)'), '')
 endfunction
 "----------------------------------------
 " 全角スペースを表示
@@ -437,44 +469,44 @@ endfunction
 
 " デフォルトのZenkakuSpaceを定義
 function! ZenkakuSpace()
-  highlight ZenkakuSpace cterm=underline ctermfg=darkgrey gui=underline guifg=darkgrey
+    highlight ZenkakuSpace cterm=underline ctermfg=darkgrey gui=underline guifg=darkgrey
 endfunction
 
 if has('syntax')
-  augroup ZenkakuSpace
-    autocmd!
-    " ZenkakuSpaceをカラーファイルで設定するなら次の行は削除
-    autocmd ColorScheme       * call ZenkakuSpace()
-    " 全角スペースのハイライト指定
-    autocmd VimEnter,WinEnter * match ZenkakuSpace /　/
-  augroup END
-  call ZenkakuSpace()
+    augroup ZenkakuSpace
+        autocmd!
+        " ZenkakuSpaceをカラーファイルで設定するなら次の行は削除
+        autocmd ColorScheme       * call ZenkakuSpace()
+        " 全角スペースのハイライト指定
+        autocmd VimEnter,WinEnter * match ZenkakuSpace /　/
+    augroup END
+    call ZenkakuSpace()
 endif
 "----------------------------------------
 " Windowsで内部エンコーディングがcp932以外の場合
 " makeのメッセージが化けるのを回避
 "----------------------------------------
 if has('win32') || has('win64') || has('win95') || has('win16')
-  au QuickfixCmdPost make call QFixCnv('cp932')
+    au QuickfixCmdPost make call QFixCnv('cp932')
 endif
 
 function! QFixCnv(enc)
-  if a:enc == &enc
-    return
-  endif
-  let qflist = getqflist()
-  for i in qflist
-    let i.text = iconv(i.text, a:enc, &enc)
-  endfor
-  call setqflist(qflist)
+    if a:enc == &enc
+        return
+    endif
+    let qflist = getqflist()
+    for i in qflist
+        let i.text = iconv(i.text, a:enc, &enc)
+    endfor
+    call setqflist(qflist)
 endfunction
 "----------------------------------------
 "grep,tagsのためカレントディレクトリをファイルと同じディレクトリに移動する
 "----------------------------------------
 if exists('+autochdir')
-  "autochdirがある場合カレントディレクトリを移動
-  set autochdir
+    "autochdirがある場合カレントディレクトリを移動
+    set autochdir
 else
-  "autochdirが存在しないが、カレントディレクトリを移動したい場合
-  au BufEnter * execute ":silent! lcd " . escape(expand("%:p:h"), ' ')
+    "autochdirが存在しないが、カレントディレクトリを移動したい場合
+    au BufEnter * execute ":silent! lcd " . escape(expand("%:p:h"), ' ')
 endif
