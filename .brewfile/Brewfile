@@ -170,6 +170,7 @@ brew swiftlint
 brew swig
 brew szip
 brew tbb
+brew telnet
 brew texinfo
 brew tig
 brew tree
