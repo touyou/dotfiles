@@ -44,7 +44,6 @@ brew git-flow
 brew glib
 brew glide
 brew gmp
-brew gmp@4
 brew gnu-sed
 brew go
 brew gobject-introspection
@@ -57,6 +56,7 @@ brew gtk-mac-integration
 brew guile
 brew harfbuzz
 brew haskell-stack
+brew heroku
 brew hicolor-icon-theme
 brew hiredis
 brew http-parser
@@ -68,8 +68,6 @@ brew intltool
 brew ipcalc
 brew iperf
 brew isl
-brew isl@0.11
-brew isl@0.12
 brew jpeg
 brew jruby
 brew kotlin
@@ -81,7 +79,6 @@ brew libevent
 brew libffi
 brew libgpg-error
 brew libmpc
-brew libmpc@0.8
 brew libogg
 brew libpng
 brew librsvg
@@ -106,7 +103,6 @@ brew mercurial
 brew metis
 brew mobiledevice
 brew mpfr
-brew mpfr@2
 brew mysql
 brew nettle
 brew ninja
@@ -141,7 +137,6 @@ brew python
 brew python3
 brew qscintilla2
 brew qt
-brew qt@5.7
 brew r
 brew rbenv
 brew readline
@@ -177,7 +172,7 @@ brew tree
 brew unixodbc
 brew utf8proc
 brew veclibfort
-brew vim
+brew vim --with-lua
 brew vimpager
 brew webp
 brew wget
@@ -236,7 +231,13 @@ brew ricty --vim-powerline
 
 # Other Homebrew packages
 brew clasp
+brew gmp@4
 brew gringo
+brew isl@0.11
+brew isl@0.12
+brew libmpc@0.8
+brew mpfr@2
+brew qt@5.7
 
 # App Store applications
 appstore 405843582 Alfred (1.2)

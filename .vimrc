@@ -343,7 +343,7 @@ hi SyntasticErrorSign ctermfg=160
 hi SyntasticWarningSign ctermfg=220
 " merlin
 let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
-call dein#add(g:opamshare . "/merlin/vim", {'lazy': 1, 'on_ft': 'ocaml', 'on_event': 'InsertEnter'})
+execute 'set rtp+=' . g:opamshare . '/merlin/vim'
 let g:syntastic_ocaml_checkers = ['merlin']
 
 " NeoComplete
