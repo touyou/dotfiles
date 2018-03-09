@@ -1,0 +1,10 @@
+# This is Git's per-user configuration file.
+[user]
+# Please adapt and uncomment the following lines:
+#	name = 藤井陽介
+#	email = touyou@fujiiyousukenoMacBook-puro.local
+[user]
+	name = Yosuke Fujii
+	email = fujiyou1121@gmail.com
+[core]
+	editor = vim -c \"set fenc=utf-8\"
