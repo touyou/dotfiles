@@ -1,0 +1,96 @@
+
+# tap repositories and their packages
+
+tap homebrew/core
+brew aspcud
+brew autoconf
+brew cairo
+brew camlp4
+brew carthage
+brew clingo
+brew darcs
+brew docker
+brew fontconfig
+brew fontforge
+brew freetype
+brew gcc@6
+brew gdbm
+brew gettext
+brew ghostscript
+brew gibo
+brew glib
+brew gmp
+brew go
+brew gobject-introspection
+brew graphite2
+brew harfbuzz
+brew haskell-stack
+brew hub
+brew icu4c
+brew isl
+brew jpeg
+brew libffi
+brew libmpc
+brew libpng
+brew libtiff
+brew libtool
+brew libyaml
+brew little-cms2
+brew lua
+brew mas
+brew mercurial
+brew mpfr
+brew nodebrew
+brew ocaml
+brew ocamlbuild
+brew opam
+brew openssl
+brew pango
+brew pcre
+brew perl
+brew pixman
+brew pkg-config
+brew python
+brew python@2
+brew rbenv
+brew readline
+brew rlwrap
+brew ruby
+brew ruby-build
+brew sqlite
+brew swiftlint
+brew tig
+brew vim --with-lua
+brew xz
+brew zsh
+
+tap caskroom/cask
+cask virtualbox
+cask docker
+cask mactex
+cask filezilla
+
+tap beeftornado/rmtree
+
+tap rcmdnk/file
+brew brew-file
+
+tap sanemat/font
+brew ricty --with-powerline
+
+# App Store applications
+appstore 824171161 Affinity Designer (1.6.1)
+appstore 824183456 Affinity Photo (1.6.7)
+appstore 405843582 Alfred (1.2)
+appstore 672206759 Disk Diag (1.4)
+appstore 549083868 Display Menu (2.2.3)
+appstore 406056744 Evernote (7.0.2)
+appstore 682658836 GarageBand (10.2.0)
+appstore 408981434 iMovie (10.1.8)
+appstore 409183694 Keynote (7.3.1)
+appstore 411213048 LadioCast (000012003)
+appstore 518830108 Memory Cleaner (2.5)
+appstore 409203825 Numbers (4.3.1)
+appstore 823766827 OneDrive (17.005.0107)
+appstore 409201541 Pages (6.3.1)
+appstore 497799835 Xcode (9.2)
