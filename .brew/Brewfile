@@ -7,6 +7,7 @@ brew autoconf
 brew cairo
 brew camlp4
 brew carthage
+brew clang-format
 brew clingo
 brew darcs
 brew docker
@@ -27,6 +28,7 @@ brew harfbuzz
 brew haskell-stack
 brew hub
 brew icu4c
+brew imagemagick
 brew isl
 brew jpeg
 brew libffi
@@ -65,10 +67,11 @@ brew xz
 brew zsh
 
 tap caskroom/cask
-cask virtualbox
+cask basictex
+cask crunch
 cask docker
-cask mactex
 cask filezilla
+cask virtualbox
 
 tap beeftornado/rmtree
 
@@ -77,6 +80,9 @@ brew brew-file
 
 tap sanemat/font
 brew ricty --with-powerline
+
+# Other Homebrew packages
+brew swiftenv
 
 # App Store applications
 appstore 824171161 Affinity Designer (1.6.1)
