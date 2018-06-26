@@ -8,3 +8,4 @@
 	email = fujiyou1121@gmail.com
 [core]
 	editor = vim -c \"set fenc=utf-8\"
+	excludesfile = ~/.gitignore_global

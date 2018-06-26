@@ -2,78 +2,132 @@
 # tap repositories and their packages
 
 tap homebrew/core
+brew arpack
 brew aspcud
 brew autoconf
+brew automake
+brew boost
 brew cairo
 brew camlp4
 brew carthage
 brew clang-format
 brew clingo
+brew cmake
 brew darcs
 brew docker
+brew dpkg
+brew epstool
+brew fftw
+brew fig2dev
+brew flac
+brew fltk
 brew fontconfig
 brew fontforge
 brew freetype
-brew gcc@6
+brew fribidi
+brew gcc --without-multilib
+brew gd
 brew gdbm
 brew gettext
 brew ghostscript
 brew gibo
+brew gl2ps
 brew glib
+brew glpk
 brew gmp
+brew gnu-tar
+brew gnuplot
 brew go
 brew gobject-introspection
+brew gpatch
+brew graphicsmagick
 brew graphite2
 brew harfbuzz
 brew haskell-stack
+brew hdf5
 brew hub
 brew icu4c
 brew imagemagick
 brew isl
+brew jasper
+brew jemalloc
 brew jpeg
+brew libevent
 brew libffi
+brew libidn2
 brew libmpc
+brew libogg
 brew libpng
+brew libsndfile
+brew libtermkey
 brew libtiff
 brew libtool
+brew libunistring
+brew libuv
+brew libvorbis
+brew libvterm
 brew libyaml
 brew little-cms2
 brew lua
+brew luajit
 brew mas
 brew mercurial
+brew metis
+brew mono
 brew mpfr
+brew msgpack
+brew neovim
+brew netpbm
+brew node
 brew nodebrew
 brew ocaml
 brew ocamlbuild
+brew octave
 brew opam
+brew open-mpi --with-cxx-bindings
 brew openssl
 brew pango
 brew pcre
 brew perl
 brew pixman
 brew pkg-config
+brew plotutils
+brew portaudio
+brew pstoedit
 brew python
 brew python@2
+brew qhull
+brew qrupdate
 brew rbenv
 brew readline
 brew rlwrap
 brew ruby
 brew ruby-build
 brew sqlite
+brew suite-sparse
 brew swiftlint
+brew szip
 brew tig
-brew vim --with-lua
+brew unibilium
+brew veclibfort
+brew vim
+brew webp
+brew wget
 brew xz
+brew yarn
 brew zsh
 
-tap caskroom/cask
-cask basictex
-cask crunch
-cask docker
-cask filezilla
-cask virtualbox
-
 tap beeftornado/rmtree
+
+tap caskroom/cask
+
+tap kylef/formulae
+brew swiftenv
+
+tap mono0926/license-plist
+brew license-plist
+
+tap neovim/neovim
 
 tap rcmdnk/file
 brew brew-file
@@ -82,7 +136,20 @@ tap sanemat/font
 brew ricty --with-powerline
 
 # Other Homebrew packages
-brew swiftenv
+brew cpanm
+
+# Other Cask applications
+cask basictex
+cask blender
+cask crunch
+cask docker
+cask dotnet
+cask filezilla
+cask paraview
+cask skim
+cask virtualbox
+cask xquartz
+cask zotero
 
 # App Store applications
 appstore 824171161 Affinity Designer (1.6.1)
@@ -90,13 +157,12 @@ appstore 824183456 Affinity Photo (1.6.7)
 appstore 405843582 Alfred (1.2)
 appstore 672206759 Disk Diag (1.4)
 appstore 549083868 Display Menu (2.2.3)
-appstore 406056744 Evernote (7.0.2)
+appstore 406056744 Evernote (7.1)
 appstore 682658836 GarageBand (10.2.0)
-appstore 408981434 iMovie (10.1.8)
-appstore 409183694 Keynote (7.3.1)
-appstore 411213048 LadioCast (000012003)
+appstore 408981434 iMovie (10.1.9)
+appstore 409183694 Keynote (8.0)
+appstore 411213048 LadioCast (000012004)
 appstore 518830108 Memory Cleaner (2.5)
-appstore 409203825 Numbers (4.3.1)
-appstore 823766827 OneDrive (17.005.0107)
-appstore 409201541 Pages (6.3.1)
-appstore 497799835 Xcode (9.2)
+appstore 409203825 Numbers (5.0)
+appstore 823766827 OneDrive (18.044.0301)
+appstore 409201541 Pages (7.0)
