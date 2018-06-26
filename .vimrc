@@ -111,7 +111,7 @@ set virtualedit=block
 
 " link clipboard
 if has('unnamedplus')
-    set clipboard& clipboard+=unnamedplus, unnamed
+    set clipboard& clipboard+=unnamedplus
 else
     set clipboard& clipboard+=unnamed
 endif

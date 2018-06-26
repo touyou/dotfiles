@@ -41,7 +41,7 @@ do
     ln -snfv "$DOTPATH/$f" "$HOME/$f"
 done
 
-for f in .config/??*
-do
-    ln -snfv "$DOTPATH/$f" "$HOME/$f"
-done
+# for nvim
+mkdir -p $HOME/.config/nvim
+ln -snfv "$DOTPATH/.vim" "$HOME/.config/nvim/.vim"
+ln -snfv "$DOTPATH/.vimrc" "$HOME/.config/nvim/init.vim"
