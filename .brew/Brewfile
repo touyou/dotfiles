@@ -28,6 +28,7 @@ brew fribidi
 brew gcc --without-multilib
 brew gd
 brew gdbm
+brew gdk-pixbuf
 brew gettext
 brew ghostscript
 brew gibo
@@ -37,6 +38,7 @@ brew glpk
 brew gmp
 brew gnu-tar
 brew gnuplot
+brew gnutls
 brew go
 brew gobject-introspection
 brew gpatch
@@ -48,17 +50,21 @@ brew hdf5
 brew hub
 brew icu4c
 brew imagemagick
+brew imagemagick@6
 brew isl
 brew jasper
 brew jemalloc
 brew jpeg
+brew libcroco
 brew libevent
 brew libffi
 brew libidn2
 brew libmpc
 brew libogg
 brew libpng
+brew librsvg
 brew libsndfile
+brew libtasn1
 brew libtermkey
 brew libtiff
 brew libtool
@@ -78,6 +84,7 @@ brew mpfr
 brew msgpack
 brew neovim
 brew netpbm
+brew nettle
 brew node
 brew nodebrew
 brew ocaml
@@ -86,6 +93,7 @@ brew octave
 brew opam
 brew open-mpi --with-cxx-bindings
 brew openssl
+brew p11-kit
 brew pango
 brew pcre
 brew perl
@@ -120,6 +128,9 @@ brew zsh
 tap beeftornado/rmtree
 
 tap caskroom/cask
+
+tap d12frosted/emacs-plus
+brew emacs-plus --with-cocoa --with-spacemacs-icon
 
 tap kylef/formulae
 brew swiftenv
