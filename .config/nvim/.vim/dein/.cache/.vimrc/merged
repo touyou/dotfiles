@@ -1,2 +1,0 @@
-100
-['Shougo/dein.vim', 'Shougo/denite.nvim', 'Shougo/neomru.vim', 'Shougo/vimproc.vim', 'carakan/new-railscasts-theme', 'cespare/vim-toml', 'davidhalter/jedi-vim', 'dgryski/vim-godef', 'fatih/vim-go', 'majutsushi/tagbar', 'rjohnsondev/vim-compiler-go', 'ryanoasis/vim-devicons', 'scrooloose/nerdtree', 'tiagofumo/vim-nerdtree-syntax-highlight', 'toyamarinyon/vim-swift', 'tpope/vim-fugitive', 'vim-airline/vim-airline', 'vim-airline/vim-airline-themes', 'vim-jp/vim-go-extra', 'wlangstroth/vim-racket']
