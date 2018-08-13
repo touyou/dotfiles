@@ -126,6 +126,7 @@ brew suite-sparse
 brew swiftlint
 brew szip
 brew tig
+brew tmux
 brew unibilium
 brew usbmuxd
 brew veclibfort
