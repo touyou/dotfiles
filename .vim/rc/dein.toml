@@ -36,9 +36,12 @@ repo = 'tiagofumo/vim-nerdtree-syntax-highlight'
 # color scheme
 [[plugins]]
 repo = 'carakan/new-railscasts-theme'
-hook_add = '''
-    au MyAutoCmd VimEnter * nested colorscheme new-railscasts
-'''
+#hook_add = '''
+#    au MyAutoCmd VimEnter * nested colorscheme new-railscasts
+#'''
+
+[[plugins]]
+repo = 'jacoborus/tender.vim'
 
 # rich status and tab bar
 [[plugins]]

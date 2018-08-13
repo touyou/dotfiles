@@ -110,11 +110,12 @@ set backspace=indent,eol,start
 set virtualedit=block  
 
 " link clipboard
-if has('unnamedplus')
-    set clipboard& clipboard+=unnamedplus
-else
-    set clipboard& clipboard+=unnamed
-endif
+"if has('unnamedplus')
+"    set clipboard& clipboard+=unnamedplus
+"else
+"    set clipboard& clipboard+=unnamed
+"endif
+set clipboard+=unnamedplus
 " enable mouse
 if has('mouse')
     set mouse=a
@@ -195,6 +196,12 @@ endfunction
 let &tabline = '%!' . s:SID_PREFIX() . 'my_tabline()'
 " show tabline
 set showtabline=2
+
+" color scheme
+if (has("termguicolors"))
+ set termguicolors
+endif
+colorscheme tender
 
 "key mapping-------------------------------
 " load vimrc: press F1
@@ -312,7 +319,7 @@ let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['txt'] = ''
 set guifont=RictyDiscordForPowerline\ Nerd\ Font:h14
 
 " airline
-let g:airline_theme='light'
+let g:airline_theme='tender'
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_idx_mode = 1

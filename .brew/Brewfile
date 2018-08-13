@@ -6,6 +6,7 @@ brew arpack
 brew aspcud
 brew autoconf
 brew automake
+brew bat
 brew boost
 brew cairo
 brew camlp4
@@ -13,6 +14,7 @@ brew carthage
 brew clang-format
 brew clingo
 brew cmake
+brew cython
 brew darcs
 brew docker
 brew dpkg
@@ -48,9 +50,12 @@ brew harfbuzz
 brew haskell-stack
 brew hdf5
 brew hub
+brew icarus-verilog
 brew icu4c
+brew ideviceinstaller
 brew imagemagick
 brew imagemagick@6
+brew ios-deploy
 brew isl
 brew jasper
 brew jemalloc
@@ -59,8 +64,10 @@ brew libcroco
 brew libevent
 brew libffi
 brew libidn2
+brew libimobiledevice
 brew libmpc
 brew libogg
+brew libplist
 brew libpng
 brew librsvg
 brew libsndfile
@@ -69,10 +76,12 @@ brew libtermkey
 brew libtiff
 brew libtool
 brew libunistring
+brew libusb
 brew libuv
 brew libvorbis
 brew libvterm
 brew libyaml
+brew libzip
 brew little-cms2
 brew lua
 brew luajit
@@ -101,6 +110,7 @@ brew pixman
 brew pkg-config
 brew plotutils
 brew portaudio
+brew potrace
 brew pstoedit
 brew python
 brew python@2
@@ -117,6 +127,7 @@ brew swiftlint
 brew szip
 brew tig
 brew unibilium
+brew usbmuxd
 brew veclibfort
 brew vim
 brew webp
