@@ -7,6 +7,7 @@ brew aspcud
 brew autoconf
 brew automake
 brew bat
+brew binutils
 brew boost
 brew cairo
 brew camlp4
@@ -14,11 +15,13 @@ brew carthage
 brew clang-format
 brew clingo
 brew cmake
-brew cython
+brew cpanminus
 brew darcs
 brew docker
 brew dpkg
+brew eigen
 brew epstool
+brew ffmpeg
 brew fftw
 brew fig2dev
 brew flac
@@ -27,7 +30,7 @@ brew fontconfig
 brew fontforge
 brew freetype
 brew fribidi
-brew gcc --without-multilib
+brew gcc
 brew gd
 brew gdbm
 brew gdk-pixbuf
@@ -53,6 +56,7 @@ brew hub
 brew icarus-verilog
 brew icu4c
 brew ideviceinstaller
+brew ilmbase
 brew imagemagick
 brew imagemagick@6
 brew ios-deploy
@@ -60,6 +64,7 @@ brew isl
 brew jasper
 brew jemalloc
 brew jpeg
+brew lame
 brew libcroco
 brew libevent
 brew libffi
@@ -79,7 +84,9 @@ brew libunistring
 brew libusb
 brew libuv
 brew libvorbis
+brew libvpx
 brew libvterm
+brew libxml2
 brew libyaml
 brew libzip
 brew little-cms2
@@ -88,9 +95,9 @@ brew luajit
 brew mas
 brew mercurial
 brew metis
-brew mono
 brew mpfr
 brew msgpack
+brew ncurses
 brew neovim
 brew netpbm
 brew nettle
@@ -100,8 +107,12 @@ brew ocaml
 brew ocamlbuild
 brew octave
 brew opam
-brew open-mpi --with-cxx-bindings
+brew open-mpi
+brew openblas
+brew openexr
+brew openjpeg
 brew openssl
+brew opus
 brew p11-kit
 brew pango
 brew pcre
@@ -118,37 +129,62 @@ brew qhull
 brew qrupdate
 brew rbenv
 brew readline
+brew reattach-to-user-namespace
 brew rlwrap
 brew ruby
 brew ruby-build
+brew screenfetch
+brew sdl2
+brew snappy
 brew sqlite
 brew suite-sparse
+brew sundials
 brew swiftlint
 brew szip
+brew tbb
+brew texinfo
+brew theora
 brew tig
 brew tmux
+brew tnftp
 brew unibilium
 brew usbmuxd
 brew veclibfort
-brew vim
 brew webp
 brew wget
+brew x264
+brew x265
+brew xvid
 brew xz
-brew yarn
+brew yarn --without-node
 brew zsh
+
+tap homebrew/cask
+cask basictex
+cask brackets
+cask docker
+cask openscad
+cask processing
+cask virtualbox
+cask xmind
+cask zotero
 
 tap beeftornado/rmtree
 
-tap caskroom/cask
-
 tap d12frosted/emacs-plus
-brew emacs-plus --with-cocoa --with-spacemacs-icon
+brew emacs-plus
+
+tap ibdecodable/tap
+brew iblinter
 
 tap kylef/formulae
 brew swiftenv
 
 tap mono0926/license-plist
 brew license-plist
+
+tap mscharley/homebrew
+brew alacritty
 
 tap neovim/neovim
 
@@ -158,34 +194,31 @@ brew brew-file
 tap sanemat/font
 brew ricty --with-powerline
 
-# Other Homebrew packages
-brew cpanm
-
 # Other Cask applications
-cask basictex
 cask blender
 cask crunch
-cask docker
 cask dotnet
 cask filezilla
 cask paraview
 cask skim
-cask virtualbox
+cask wireshark
 cask xquartz
-cask zotero
 
 # App Store applications
 appstore 824171161 Affinity Designer (1.6.1)
 appstore 824183456 Affinity Photo (1.6.7)
-appstore 405843582 Alfred (1.2)
 appstore 672206759 Disk Diag (1.4)
 appstore 549083868 Display Menu (2.2.3)
-appstore 406056744 Evernote (7.1)
-appstore 682658836 GarageBand (10.2.0)
-appstore 408981434 iMovie (10.1.9)
-appstore 409183694 Keynote (8.0)
-appstore 411213048 LadioCast (000012004)
-appstore 518830108 Memory Cleaner (2.5)
-appstore 409203825 Numbers (5.0)
-appstore 823766827 OneDrive (18.044.0301)
-appstore 409201541 Pages (7.0)
+appstore 406056744 Evernote (7.8)
+appstore 682658836 GarageBand (10.3.2)
+appstore 668208984 GIPHY CAPTURE (4.1)
+appstore 408981434 iMovie (10.1.10)
+appstore 409183694 Keynote (8.3)
+appstore 411213048 LadioCast (000013000)
+appstore 539883307 LINE (5.12.1)
+appstore 518830108 Memory Cleaner (3.0.1)
+appstore 409203825 Numbers (5.3)
+appstore 823766827 OneDrive (18.214.1021)
+appstore 409201541 Pages (7.3)
+appstore 803453959 Slack (3.3.7)
+appstore 497799835 Xcode (10.1)

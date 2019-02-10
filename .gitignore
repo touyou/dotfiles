@@ -5,3 +5,4 @@
 .vim/dein/temp/
 .vim/dein/.dein/
 .vim/dein/.cache
+.vim/tmp

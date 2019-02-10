@@ -108,6 +108,7 @@ set smarttab
 set backspace=indent,eol,start
 " enable free cursor in visual block mode
 set virtualedit=block  
+set guicursor=
 
 " link clipboard
 "if has('unnamedplus')
@@ -359,3 +360,14 @@ let g:airline_right_alt_sep = '⮃'
 
 " jedi
 autocmd FileType python setlocal completeopt-=preview
+
+" LSP
+if executable('rls')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'rls',
+        \ 'cmd': {server_info->['rustup', 'run', 'nightly', 'rls']},
+        \ 'whitelist': ['rust'],
+        \ })
+endif
+
+
