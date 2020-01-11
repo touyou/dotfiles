@@ -15,6 +15,7 @@ brew carthage
 brew clang-format
 brew clingo
 brew cmake
+brew cocoapods
 brew cpanminus
 brew darcs
 brew docker
@@ -37,6 +38,7 @@ brew gdk-pixbuf
 brew gettext
 brew ghostscript
 brew gibo
+brew git
 brew gl2ps
 brew glib
 brew glpk
@@ -101,6 +103,7 @@ brew ncurses
 brew neovim
 brew netpbm
 brew nettle
+brew ninja
 brew node
 brew nodebrew
 brew ocaml
@@ -111,11 +114,11 @@ brew open-mpi
 brew openblas
 brew openexr
 brew openjpeg
-brew openssl
 brew opus
 brew p11-kit
 brew pango
 brew pcre
+brew pcre2
 brew perl
 brew pixman
 brew pkg-config
@@ -143,12 +146,12 @@ brew swiftlint
 brew szip
 brew tbb
 brew texinfo
+brew tfenv
 brew theora
 brew tig
 brew tmux
 brew tnftp
 brew unibilium
-brew usbmuxd
 brew veclibfort
 brew webp
 brew wget
@@ -160,14 +163,16 @@ brew yarn --without-node
 brew zsh
 
 tap homebrew/cask
-cask basictex
-cask brackets
-cask docker
-cask openscad
+cask blender
+cask crunch
+cask dotnet
+cask keycast
+cask mactex-no-gui
+cask paraview
 cask processing
-cask virtualbox
-cask xmind
-cask zotero
+cask touchdesigner
+cask wireshark
+cask xquartz
 
 tap beeftornado/rmtree
 
@@ -179,6 +184,8 @@ brew iblinter
 
 tap kylef/formulae
 brew swiftenv
+
+tap lvillani/tap
 
 tap mono0926/license-plist
 brew license-plist
@@ -194,15 +201,21 @@ brew brew-file
 tap sanemat/font
 brew ricty --with-powerline
 
+# Other Homebrew packages
+brew openssl
+brew usbmuxd
+
 # Other Cask applications
-cask blender
-cask crunch
-cask dotnet
+cask brackets
+cask docker
 cask filezilla
-cask paraview
+cask kitematic
+cask openscad
+cask pliim
 cask skim
-cask wireshark
-cask xquartz
+cask virtualbox
+cask xmind
+cask zotero
 
 # App Store applications
 appstore 824171161 Affinity Designer (1.6.1)

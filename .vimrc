@@ -92,6 +92,7 @@ augroup fileTypeIndent
     autocmd BufNewFile,BufRead *.mly setlocal ts=2 sw=2 sts=2
     autocmd BufNewFile,BufRead *.mll setlocal ts=2 sw=2 sts=2
     autocmd BufNewFile,BufRead *.html setlocal ts=2 sw=2 sts=2
+    autocmd BufNewFile,BufRead *.erb setlocal ts=2 sw=2 sts=2
     autocmd BufNewFile,BufRead *.js setlocal ts=2 sw=2 sts=2
     autocmd BufNewFile,BufRead *.css setlocal ts=2 sw=2 sts=2
 augroup END
