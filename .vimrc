@@ -203,7 +203,8 @@ set showtabline=2
 if (has("termguicolors"))
  set termguicolors
 endif
-colorscheme tender
+" colorscheme tender
+colorscheme dogrun
 
 "key mapping-------------------------------
 " load vimrc: press F1

@@ -6,5 +6,6 @@ let g:dein#_ftplugin = ftplugin
 let g:dein#_base_path = '/Users/touyou/.vim/dein'
 let g:dein#_runtime_path = '/Users/touyou/.vim/dein/.cache/init.vim/.dein'
 let g:dein#_cache_path = '/Users/touyou/.vim/dein/.cache/init.vim'
-let &runtimepath = '/Users/touyou/.vim/dein/repos/github.com/Shougo/dein.vim/,/Users/touyou/.config/nvim,/etc/xdg/nvim,/Users/touyou/.local/share/nvim/site,/usr/local/share/nvim/site,/usr/share/nvim/site,/Users/touyou/.vim/dein/repos/github.com/Shougo/dein.vim,/Users/touyou/.vim/dein/.cache/init.vim/.dein,/usr/local/Cellar/neovim/0.4.3/share/nvim/runtime,/Users/touyou/.vim/dein/.cache/init.vim/.dein/after,/usr/share/nvim/site/after,/usr/local/share/nvim/site/after,/Users/touyou/.local/share/nvim/site/after,/etc/xdg/nvim/after,/Users/touyou/.config/nvim/after'
+let &runtimepath = '/Users/touyou/.vim/dein/repos/github.com/Shougo/dein.vim/,/Users/touyou/.config/nvim,/etc/xdg/nvim,/Users/touyou/.local/share/nvim/site,/usr/local/share/nvim/site,/usr/share/nvim/site,/Users/touyou/.vim/dein/repos/github.com/Shougo/dein.vim,/Users/touyou/.vim/dein/repos/github.com/Shougo/denite.nvim,/Users/touyou/.vim/dein/repos/github.com/Shougo/neomru.vim,/Users/touyou/.vim/dein/.cache/init.vim/.dein,/usr/local/Cellar/neovim/0.4.3/share/nvim/runtime,/Users/touyou/.vim/dein/.cache/init.vim/.dein/after,/usr/share/nvim/site/after,/usr/local/share/nvim/site/after,/Users/touyou/.local/share/nvim/site/after,/etc/xdg/nvim/after,/Users/touyou/.config/nvim/after'
 filetype off
+    let g:deoplete#enable_at_startup = 1
