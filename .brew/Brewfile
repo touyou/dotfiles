@@ -2,6 +2,7 @@
 # tap repositories and their packages
 
 tap homebrew/core
+brew amazon-ecs-cli
 brew arpack
 brew aspcud
 brew autoconf
@@ -19,6 +20,7 @@ brew cocoapods
 brew cpanminus
 brew darcs
 brew docker
+brew docker-machine
 brew dpkg
 brew eigen
 brew epstool
@@ -39,6 +41,8 @@ brew gettext
 brew ghostscript
 brew gibo
 brew git
+brew git-lfs
+brew git-secrets
 brew gl2ps
 brew glib
 brew glpk
@@ -55,6 +59,7 @@ brew harfbuzz
 brew haskell-stack
 brew hdf5
 brew hub
+brew iblinter
 brew icarus-verilog
 brew icu4c
 brew ideviceinstaller
@@ -65,6 +70,7 @@ brew ios-deploy
 brew isl
 brew jasper
 brew jemalloc
+brew jenv
 brew jpeg
 brew lame
 brew libcroco
@@ -99,6 +105,7 @@ brew mercurial
 brew metis
 brew mpfr
 brew msgpack
+brew mysql
 brew ncurses
 brew neovim
 brew netpbm
@@ -114,6 +121,7 @@ brew open-mpi
 brew openblas
 brew openexr
 brew openjpeg
+brew openssl@1.1
 brew opus
 brew p11-kit
 brew pango
@@ -125,9 +133,9 @@ brew pkg-config
 brew plotutils
 brew portaudio
 brew potrace
+brew protobuf
 brew pstoedit
 brew python
-brew python@2
 brew qhull
 brew qrupdate
 brew rbenv
@@ -164,23 +172,36 @@ brew zsh
 
 tap homebrew/cask
 cask blender
+cask brackets
+cask chromium
 cask crunch
+cask docker
 cask dotnet
+cask java
 cask keycast
+cask kitematic
 cask mactex-no-gui
+cask openscad
 cask paraview
+cask pliim
 cask processing
+cask skim
 cask touchdesigner
+cask virtualbox
 cask wireshark
+cask xmind
 cask xquartz
+cask zotero
 
 tap beeftornado/rmtree
 
 tap d12frosted/emacs-plus
 brew emacs-plus
 
+tap dart-lang/dart
+brew dart
+
 tap ibdecodable/tap
-brew iblinter
 
 tap kylef/formulae
 brew swiftenv
@@ -203,19 +224,11 @@ brew ricty --with-powerline
 
 # Other Homebrew packages
 brew openssl
+brew python@2
 brew usbmuxd
 
 # Other Cask applications
-cask brackets
-cask docker
 cask filezilla
-cask kitematic
-cask openscad
-cask pliim
-cask skim
-cask virtualbox
-cask xmind
-cask zotero
 
 # App Store applications
 appstore 824171161 Affinity Designer (1.6.1)
