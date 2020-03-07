@@ -24,6 +24,8 @@ brew docker-machine
 brew dpkg
 brew eigen
 brew epstool
+brew exa
+brew fd
 brew ffmpeg
 brew fftw
 brew fig2dev
@@ -58,6 +60,7 @@ brew graphite2
 brew harfbuzz
 brew haskell-stack
 brew hdf5
+brew hexyl
 brew hub
 brew iblinter
 brew icarus-verilog
@@ -133,6 +136,7 @@ brew pkg-config
 brew plotutils
 brew portaudio
 brew potrace
+brew procs
 brew protobuf
 brew pstoedit
 brew python
@@ -141,6 +145,7 @@ brew qrupdate
 brew rbenv
 brew readline
 brew reattach-to-user-namespace
+brew ripgrep
 brew rlwrap
 brew ruby
 brew ruby-build
