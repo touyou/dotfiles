@@ -3,6 +3,8 @@
 
 tap homebrew/core
 brew amazon-ecs-cli
+brew anyenv
+brew aom
 brew arpack
 brew aspcud
 brew autoconf
@@ -11,7 +13,6 @@ brew bat
 brew binutils
 brew boost
 brew cairo
-brew camlp4
 brew carthage
 brew clang-format
 brew clingo
@@ -19,12 +20,13 @@ brew cmake
 brew cocoapods
 brew cpanminus
 brew darcs
-brew docker
+brew deno
 brew docker-machine
 brew dpkg
 brew eigen
 brew epstool
 brew exa
+brew expat
 brew fd
 brew ffmpeg
 brew fftw
@@ -34,21 +36,27 @@ brew fltk
 brew fontconfig
 brew fontforge
 brew freetype
+brew frei0r
 brew fribidi
+brew gawk
 brew gcc
 brew gd
 brew gdbm
 brew gdk-pixbuf
 brew gettext
+brew gh
 brew ghostscript
 brew gibo
+brew giflib
 brew git
 brew git-lfs
 brew git-secrets
+brew gitui
 brew gl2ps
 brew glib
 brew glpk
 brew gmp
+brew gnu-sed
 brew gnu-tar
 brew gnuplot
 brew gnutls
@@ -61,7 +69,6 @@ brew harfbuzz
 brew haskell-stack
 brew hdf5
 brew hexyl
-brew hub
 brew iblinter
 brew icarus-verilog
 brew icu4c
@@ -73,9 +80,13 @@ brew ios-deploy
 brew isl
 brew jasper
 brew jemalloc
-brew jenv
 brew jpeg
 brew lame
+brew lazydocker
+brew lazygit
+brew leptonica
+brew libass
+brew libbluray
 brew libcroco
 brew libevent
 brew libffi
@@ -86,14 +97,18 @@ brew libogg
 brew libplist
 brew libpng
 brew librsvg
+brew libsamplerate
 brew libsndfile
+brew libsoxr
 brew libtasn1
 brew libtermkey
 brew libtiff
 brew libtool
 brew libunistring
 brew libusb
+brew libusbmuxd
 brew libuv
+brew libvidstab
 brew libvorbis
 brew libvpx
 brew libvterm
@@ -103,7 +118,9 @@ brew libzip
 brew little-cms2
 brew lua
 brew luajit
+brew lzo
 brew mas
+brew mbedtls
 brew mercurial
 brew metis
 brew mpfr
@@ -115,13 +132,14 @@ brew netpbm
 brew nettle
 brew ninja
 brew node
-brew nodebrew
+brew node-build
 brew ocaml
 brew ocamlbuild
 brew octave
 brew opam
 brew open-mpi
 brew openblas
+brew opencore-amr
 brew openexr
 brew openjpeg
 brew openssl@1.1
@@ -139,31 +157,37 @@ brew potrace
 brew procs
 brew protobuf
 brew pstoedit
-brew python
+brew python@3.8
 brew qhull
 brew qrupdate
-brew rbenv
 brew readline
 brew reattach-to-user-namespace
 brew ripgrep
 brew rlwrap
+brew rtmpdump
+brew rubberband
 brew ruby
 brew ruby-build
 brew screenfetch
 brew sdl2
 brew snappy
+brew speex
 brew sqlite
+brew srt
 brew suite-sparse
 brew sundials
+brew swagger-codegen
 brew swiftlint
+brew swig
 brew szip
 brew tbb
+brew tesseract
 brew texinfo
 brew tfenv
 brew theora
-brew tig
 brew tmux
 brew tnftp
+brew unbound
 brew unibilium
 brew veclibfort
 brew webp
@@ -173,24 +197,31 @@ brew x265
 brew xvid
 brew xz
 brew yarn --without-node
+brew zlib
 brew zsh
 
 tap homebrew/cask
+cask anaconda
+cask blackhole
 cask blender
 cask brackets
 cask chromium
 cask crunch
 cask docker
 cask dotnet
-cask java
+cask dozer
+cask google-cloud-sdk
+cask istat-menus
 cask keycast
 cask kitematic
 cask mactex-no-gui
+cask notion
 cask openscad
 cask paraview
 cask pliim
 cask processing
 cask skim
+cask steam
 cask touchdesigner
 cask virtualbox
 cask wireshark
@@ -201,15 +232,17 @@ cask zotero
 tap beeftornado/rmtree
 
 tap d12frosted/emacs-plus
-brew emacs-plus
 
 tap dart-lang/dart
 brew dart
 
+tap extrawurst/tap
+
+tap github/gh
+
 tap ibdecodable/tap
 
 tap kylef/formulae
-brew swiftenv
 
 tap lvillani/tap
 
@@ -228,12 +261,19 @@ tap sanemat/font
 brew ricty --with-powerline
 
 # Other Homebrew packages
+brew FFmpeg
+brew Qt5
+brew camlp4
+brew cpanm
+brew emacs-plus
 brew openssl
-brew python@2
+brew python
+brew python3
 brew usbmuxd
 
 # Other Cask applications
 cask filezilla
+cask java
 
 # App Store applications
 appstore 824171161 Affinity Designer (1.6.1)
