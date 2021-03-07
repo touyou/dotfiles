@@ -9,6 +9,7 @@ brew arpack
 brew aspcud
 brew autoconf
 brew automake
+brew awscli
 brew bat
 brew binutils
 brew boost
@@ -158,6 +159,7 @@ brew procs
 brew protobuf
 brew pstoedit
 brew python@3.8
+brew python@3.9
 brew qhull
 brew qrupdate
 brew readline
@@ -259,6 +261,9 @@ brew brew-file
 
 tap sanemat/font
 brew ricty --with-powerline
+
+tap stripe/stripe-cli
+brew stripe
 
 # Other Homebrew packages
 brew FFmpeg
